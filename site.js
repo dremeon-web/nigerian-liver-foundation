@@ -137,8 +137,8 @@ var SITE = {
   ],
   "contact": {
     "email": "thenigerianliverfoundation@gmail.com",
-    "phone": "+4236728858",
-    "whatsapp": "+4236728858",
+    "phone": "+1 (423) 6728858",
+    "whatsapp": "+1 (423) 6728858",
     "address": "421 E 93rd St\nBrooklyn, NY 11212\nUnited States",
     "instagram": "https://www.instagram.com/thenigerianliverfoundation",
     "facebook": "https://www.facebook.com/share/1GESCUrgD4/",
