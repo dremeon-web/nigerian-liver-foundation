@@ -1,0 +1,34 @@
+{
+  "about": {
+    "vision": "A Nigeria where liver disease is history",
+    "who": "The Nigerian Liver Foundation is a nonprofit with passionate staff dedicated to addressing the indiscriminate burden of liver diseases in Nigeria. We constantly welcome individuals who are passionate about liver health and who share in our vision to join our growing team.",
+    "mission": "To eliminate the burden of liver diseases in Nigeria and Sub-Saharan Africa through education, advocacy, research, and improved access to healthcare, while promoting a healthier future for all."
+  },
+  "values": [
+    { "name": "Compassion", "text": "We care deeply about the well-being of individuals and communities affected by liver diseases." },
+    { "name": "Integrity", "text": "We operate with transparency, honesty, and accountability in all our endeavors." },
+    { "name": "Collaboration", "text": "We believe in the power of partnerships and collaboration to achieve our mission." },
+    { "name": "Innovation", "text": "We embrace new ideas and approaches to address the challenges of liver diseases." },
+    { "name": "Equity", "text": "We strive to ensure that everyone has access to the care and support they need, regardless of their background or circumstances." }
+  ],
+  "programmes": [
+    { "name": "Education", "text": "We go to where people are. Through community engagements, screenings and school outreaches, we teach people how to protect their liver and why testing early matters." },
+    { "name": "Advocacy", "text": "We speak up for people affected by liver disease. We work with health authorities, professional bodies and community leaders to make hepatitis testing, vaccination and treatment easier to reach and to afford." },
+    { "name": "Research", "text": "We collect primary data from communities on hepatitis and MASLD, the fatty liver disease linked to metabolic health, so that decisions about liver care in Nigeria rest on local evidence." },
+    { "name": "Access to healthcare", "text": "When someone needs specialist care, we refer them promptly to a tertiary hospital and follow up afterwards, so that no one is lost between a test result and treatment." }
+  ],
+  "involved": [
+    { "name": "Join the team", "text": "We welcome people who are passionate about liver health and share our vision. Health workers, students and organisers all have a place." },
+    { "name": "Partner with us", "text": "Schools, hospitals, companies and community groups can host an outreach or work with us on a programme." }
+  ],
+  "contact": {
+    "email": "thenigerianliverfoundation@gmail.com",
+    "phone": "+4236728858",
+    "whatsapp": "+4236728858",
+    "address": "421 E 93rd St\nBrooklyn, NY 11212\nUnited States",
+    "instagram": "https://www.instagram.com/thenigerianliverfoundation",
+    "facebook": "https://www.facebook.com/share/1GESCUrgD4/",
+    "x": "https://x.com/tnlfprojects",
+    "linkedin": "https://www.linkedin.com/company/the-nigerian-liver-foundation/"
+  }
+}
