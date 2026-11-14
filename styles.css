@@ -218,3 +218,12 @@ footer .foot-base { border-top: 1px solid var(--line); padding-top: 18px; }
 .foot-brand .foot-social { font-family: var(--body); font-weight: 700; max-width: none; }
 .foot-social a { border: 1.5px solid var(--green); border-radius: 999px; padding: 5px 14px; text-decoration: none; font-size: 0.95rem; color: var(--green); }
 .foot-social a:hover { background: var(--green); color: #fff; }
+
+/* social icons */
+.foot-social { gap: 12px; align-items: center; }
+.foot-social a { border: 0; padding: 0; border-radius: 10px; display: block; line-height: 0; }
+.foot-social a:hover { background: none; opacity: 0.8; }
+.foot-social img, .contact .social img { width: 36px; height: 36px; display: block; }
+.contact .social { gap: 12px; align-items: center; }
+.contact .social a { display: block; line-height: 0; }
+.contact .social a:hover { opacity: 0.8; }

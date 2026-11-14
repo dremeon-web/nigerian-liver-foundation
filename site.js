@@ -176,10 +176,10 @@ function showSite(s) {
   if (c.phone) row("Phone", link("tel:" + c.phone.replace(/[^+\d]/g, ""), c.phone));
   if (c.whatsapp) row("WhatsApp", document.createTextNode(c.whatsapp));
   if (c.address) row("Address", document.createTextNode(c.address));
-  var soc = [["Instagram", c.instagram], ["Facebook", c.facebook], ["X", c.x], ["LinkedIn", c.linkedin]].filter(function (p) { return p[1]; });
+  var soc = [["Instagram", c.instagram, "instagram"], ["Facebook", c.facebook, "facebook"], ["X", c.x, "x"], ["LinkedIn", c.linkedin, "linkedin"]].filter(function (p) { return p[1]; });
   if (soc.length) {
     var wrap = el("span", "social");
-    soc.forEach(function (p) { wrap.appendChild(link(p[1], p[0])); });
+    soc.forEach(function (p) { var a = link(p[1], ""), i = el("img"); i.src = "icons/" + p[2] + ".png"; i.alt = p[0]; i.width = 36; i.height = 36; a.appendChild(i); wrap.appendChild(a); });
     row("Follow us", wrap);
   }
 }
