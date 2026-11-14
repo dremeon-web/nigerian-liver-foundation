@@ -197,3 +197,37 @@ buttons.forEach(function (b) {
   });
 });
 document.getElementById("year").textContent = new Date().getFullYear();
+
+/* team page */
+function showTeam(list) {
+  var box = document.getElementById("team-groups");
+  if (!box || !Array.isArray(list) || !list.length) return;
+  box.textContent = "";
+  var order = ["Leadership", "Board and advisers", "Staff", "Volunteers"], groups = {};
+  list.forEach(function (m) { var g = m.group || "Staff"; (groups[g] = groups[g] || []).push(m); if (order.indexOf(g) < 0) order.push(g); });
+  order.forEach(function (g) {
+    if (!groups[g]) return;
+    var sec = el("section", "team-group"); sec.appendChild(el("h2", "", g));
+    var grid = el("div", "team-grid");
+    groups[g].forEach(function (m) {
+      var card = el("div", "member"), ph;
+      if (m.photo) { ph = el("img", "photo"); ph.src = m.photo; ph.alt = "Portrait of " + m.name; ph.loading = "lazy"; }
+      else { ph = el("div", "photo", String(m.name || "?").replace(/^sample:\s*/i, "").charAt(0).toUpperCase()); ph.setAttribute("aria-hidden", "true"); }
+      card.appendChild(ph);
+      card.appendChild(el("h3", isSample(m.name) ? "ph" : "", m.name));
+      if (m.role) card.appendChild(el("p", "role", m.role));
+      if (m.bio) card.appendChild(el("p", "bio", m.bio));
+      grid.appendChild(card);
+    });
+    sec.appendChild(grid); box.appendChild(sec);
+  });
+}
+load("team.json", showTeam);
+
+/* menus: one open at a time; close on outside click or Escape */
+var menus = document.querySelectorAll("details.menu");
+menus.forEach(function (m) {
+  m.addEventListener("toggle", function () { if (m.open) menus.forEach(function (o) { if (o !== m) o.open = false; }); });
+});
+document.addEventListener("click", function (e) { menus.forEach(function (m) { if (!m.contains(e.target)) m.open = false; }); });
+document.addEventListener("keydown", function (e) { if (e.key === "Escape") menus.forEach(function (m) { m.open = false; }); });

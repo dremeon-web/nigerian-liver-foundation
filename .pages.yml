@@ -80,3 +80,19 @@ content:
           - { name: facebook, label: Facebook link, type: string }
           - { name: x, label: X (Twitter) link, type: string }
           - { name: linkedin, label: LinkedIn link, type: string }
+  - name: team
+    label: Our team
+    type: file
+    path: team.json
+    format: json
+    list: true
+    fields:
+      - { name: name, label: Full name, type: string }
+      - { name: role, label: Role or title, type: string }
+      - name: group
+        label: Group
+        type: select
+        options:
+          values: [Leadership, Board and advisers, Staff, Volunteers]
+      - { name: bio, label: Short profile, type: text }
+      - { name: photo, label: Photo, type: image }

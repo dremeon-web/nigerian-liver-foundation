@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Sample: Full name",
+    "role": "Founder and Executive Director",
+    "group": "Leadership",
+    "bio": "Two or three sentences about this person: their background, what they do at the foundation and why liver health matters to them.",
+    "photo": ""
+  },
+  {
+    "name": "Sample: Full name",
+    "role": "Medical Adviser",
+    "group": "Board and advisers",
+    "bio": "A short profile. Add a photo from the editor to replace the letter.",
+    "photo": ""
+  },
+  {
+    "name": "Sample: Full name",
+    "role": "Programmes Lead",
+    "group": "Staff",
+    "bio": "A short profile.",
+    "photo": ""
+  }
+]
