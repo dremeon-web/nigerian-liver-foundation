@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Nigerian Liver Foundation</title>
+<meta name="description" content="The Nigerian Liver Foundation works to prevent liver disease in Nigeria through awareness, screening, patient support and advocacy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: one left-aligned column on a pale leaf-white page; a single
+   liver-maroon block in the hero carries the testing check; everything else stays quiet. */
+:root {
+  color-scheme: light;
+  --paper: #F2F6F1;
+  --paper-deep: #E3ECE2;
+  --ink: #13261D;
+  --ink-soft: #46584E;
+  --green: #1C6B3C;
+  --green-deep: #0E3F23;
+  --liver: #1C6B3C;
+  --liver-deep: #0E3F23;
+  --gold: #D2AE55;
+  --gold-ink: #86691F;
+  --line: #C9D6CB;
+  --display: "Bricolage Grotesque", "Trebuchet MS", "Segoe UI", sans-serif;
+  --body: "Atkinson Hyperlegible", Verdana, "Segoe UI", sans-serif;
+  --wrap: 1120px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+img, svg { max-width: 100%; }
+a { color: var(--green); text-underline-offset: 3px; }
+a:hover { color: var(--green-deep); }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -0.015em; }
+h1 { font-size: clamp(2.5rem, 8.2vw, 5.25rem); font-weight: 800; }
+h2 { font-size: clamp(1.9rem, 4.6vw, 3rem); font-weight: 700; }
+h3 { font-size: 1.3rem; font-weight: 700; line-height: 1.2; }
+p { margin: 0; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 20px; }
+.band { padding: 72px 0; }
+.lede { font-size: 1.2rem; color: var(--ink-soft); max-width: 58ch; }
+.stack { display: flex; flex-direction: column; gap: 20px; }
+
+/* sample text marker */
+.ph { text-decoration: underline dashed var(--gold-ink); text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
+
+/* header */
+.top { border-bottom: 1px solid var(--line); background: var(--paper); position: sticky; top: 0; z-index: 5; }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-family: var(--display); font-weight: 700; font-size: 1.05rem; line-height: 1.1; }
+.mark { width: 36px; height: 42px; flex: none; }
+.top nav { display: flex; gap: 4px 18px; flex-wrap: wrap; align-items: center; }
+.top nav a { color: var(--ink); text-decoration: none; font-size: 0.98rem; padding: 6px 0; }
+.top nav a:hover { text-decoration: underline; }
+.btn { display: inline-block; font-family: var(--display); font-weight: 700; font-size: 1rem; text-decoration: none; padding: 12px 20px; border-radius: 999px; border: 2px solid transparent; cursor: pointer; line-height: 1.2; }
+.btn-green { background: var(--green); color: #fff; }
+.btn-green:hover { background: var(--green-deep); color: #fff; }
+.btn-gold { background: var(--gold); color: var(--ink); }
+.btn-gold:hover { background: #E3C36F; color: var(--ink); }
+.btn-line { border-color: var(--ink); color: var(--ink); background: transparent; }
+.btn-line:hover { background: var(--ink); color: var(--paper); }
+.top nav a.btn { padding: 8px 16px; color: #fff; }
+
+/* hero */
+.hero { padding: 56px 0 72px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 48px; align-items: end; }
+.hero h1 span { display: block; color: var(--gold-ink); }
+.brand .gold { color: var(--gold-ink); }
+
+/* about */
+.about-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: start; }
+.vision { font-family: var(--display); font-weight: 800; font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.05; letter-spacing: -0.02em; color: var(--green); text-wrap: balance; margin-top: 8px; }
+.about-grid h3 { margin-bottom: 6px; }
+.about-grid p { max-width: 60ch; }
+.small-head { font-family: var(--display); font-weight: 700; font-size: 1.05rem; color: var(--ink-soft); }
+.values { list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 28px 32px; }
+.values li { border-top: 3px solid var(--gold); padding-top: 14px; }
+.values h3 { margin-bottom: 6px; }
+.values p { color: var(--ink-soft); font-size: 1rem; }
+.hero .lede { margin-top: 24px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+
+.check { background: var(--liver); color: #fff; padding: 28px; border-radius: 28px 28px 28px 110px / 28px 28px 28px 80px; }
+.check h2 { font-size: 1.6rem; }
+.check p { color: #DDEFE4; }
+.check .opts { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; }
+.check button { font: inherit; text-align: left; background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.55); border-radius: 14px; padding: 12px 16px; cursor: pointer; }
+.check button:hover { background: var(--liver-deep); }
+.check button[aria-pressed="true"] { background: #fff; color: var(--liver-deep); border-color: #fff; font-weight: 700; }
+.check .answer { margin-top: 16px; padding: 16px 0 0 54px; border-top: 1px solid rgba(255,255,255,.3); min-height: 5.5em; color: #fff; }
+
+/* facts */
+.facts { background: var(--green-deep); color: #EAF3EC; }
+.facts h2 { color: #fff; max-width: 18ch; }
+.facts .lede { color: #B9D1C1; }
+.fact-list { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; }
+.fact-list li { padding: 22px 0; border-top: 1px solid rgba(255,255,255,.18); }
+.fact-list h3 { color: var(--gold); margin-bottom: 6px; }
+.note { font-size: 0.95rem; color: #B9D1C1; margin-top: 28px; max-width: 70ch; }
+
+/* programmes */
+.rows { margin-top: 36px; border-top: 2px solid var(--ink); }
+.row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 8px 40px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+.row p { color: var(--ink-soft); max-width: 60ch; }
+
+/* updates + resources */
+.split { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 56px; }
+.tint { background: var(--paper-deep); }
+.item-list { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-direction: column; gap: 22px; }
+.item-list time, .item-list .meta { display: block; font-size: 0.92rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.item-list h3 { margin: 2px 0 4px; }
+.item-list p { color: var(--ink-soft); }
+.files li { display: flex; gap: 14px; align-items: flex-start; }
+.files .ext { flex: none; font-family: var(--display); font-weight: 700; font-size: 0.8rem; background: var(--ink); color: var(--paper); border-radius: 6px; padding: 4px 8px; margin-top: 3px; min-width: 44px; text-align: center; }
+
+/* give */
+.give { background: var(--green); color: #fff; }
+.give h2 { max-width: 16ch; }
+.give p { color: #DDEFE4; max-width: 56ch; }
+.give-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 36px; }
+.give-grid div { border-top: 3px solid var(--gold); padding-top: 16px; }
+.give-grid h3 { margin-bottom: 6px; }
+.give .hero-actions { margin-top: 36px; }
+.give .btn-line { border-color: #fff; color: #fff; }
+.give .btn-line:hover { background: #fff; color: var(--green-deep); }
+
+/* contact + footer */
+.contact dl { margin: 28px 0 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 10px 28px; }
+.contact dt { font-weight: 700; }
+.contact dd { margin: 0; overflow-wrap: anywhere; }
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; font-size: 0.95rem; color: var(--ink-soft); }
+footer .wrap { display: flex; flex-direction: column; gap: 8px; }
+
+@media (max-width: 820px) {
+  .band { padding: 52px 0; }
+  .hero { padding: 36px 0 52px; }
+  .hero-grid, .split, .fact-list, .give-grid, .about-grid { grid-template-columns: minmax(0, 1fr); }
+  .about-grid { gap: 28px; }
+  .hero-grid { gap: 36px; }
+  .row { grid-template-columns: minmax(0, 1fr); }
+  .top { position: static; }
+  .check { border-radius: 24px 24px 24px 72px / 24px 24px 24px 56px; }
+  .check .answer { padding-left: 36px; }
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="The Nigerian Liver Foundation, home">
+      <svg class="mark" viewBox="0 0 40 46" aria-hidden="true"><path d="M3 5 20 2l17 3v19c0 10-8 17-17 20C11 41 3 34 3 24z" fill="#1C6B3C"/><path d="M8 18c0-6 5-8 12-8 6 0 13 1 13 6 0 4-5 6-9 8-4 2-7 8-11 8-4 0-5-7-5-14z" fill="#F2F6F1"/><path d="M15.2 13.8h3v3.2h3.2v3h-3.200v3.200h-3v-3.200H12v-3h3.200z" fill="#1C6B3C"/></svg>
+      <span>The Nigerian Liver<br><span class="gold">Foundation</span></span>
+    </a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#liver-health">Liver health</a>
+      <a href="#work">Our work</a>
+      <a href="#updates">Updates</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-green" href="#give">Donate</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Your liver works quietly. <span>So does liver disease.</span></h1>
+      <p class="lede">Most people with hepatitis feel well for years and do not know they have it. We help Nigerians get tested, get vaccinated and get care early, while the liver can still be protected.</p>
+      <div class="hero-actions">
+        <a class="btn btn-green" href="#liver-health">Learn the basics</a>
+        <a class="btn btn-line" href="#give">Support our work</a>
+      </div>
+    </div>
+
+    <aside class="check" aria-labelledby="check-title">
+      <h2 id="check-title">Have you been tested for hepatitis B?</h2>
+      <div class="opts" role="group" aria-labelledby="check-title">
+        <button type="button" id="check-no" data-a="no" aria-pressed="false">No, or I am not sure</button>
+        <button type="button" id="check-neg" data-a="neg" aria-pressed="false">Yes, and I was negative</button>
+        <button type="button" id="check-pos" data-a="pos" aria-pressed="false">Yes, and I was positive</button>
+      </div>
+      <p class="answer" id="check-answer" aria-live="polite">Choose the answer that fits you. Nothing you choose here is saved or sent anywhere.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="band facts" id="liver-health">
+  <div class="wrap">
+    <div class="stack">
+      <h2>What everyone should know about the liver</h2>
+      <p class="lede">Viral hepatitis is one of the main causes of liver cirrhosis and liver cancer. Most of that harm can be prevented.</p>
+    </div>
+    <ul class="fact-list">
+      <li><h3>Hepatitis B has a vaccine</h3><p>The vaccine is safe and protects for the long term. Babies should get their first dose as soon as possible after birth.</p></li>
+      <li><h3>Hepatitis C can be cured</h3><p>A course of tablets, usually taken for two to three months, clears the virus in most people.</p></li>
+      <li><h3>You can feel fine and still have it</h3><p>Hepatitis often causes no symptoms until the liver is badly damaged. A blood test is the only way to know.</p></li>
+      <li><h3>It spreads through blood and body fluids</h3><p>From mother to baby at birth, through unscreened blood, shared sharp objects such as razors and needles, and unprotected sex. It does not spread through sharing food or hugging.</p></li>
+      <li><h3>Alcohol and body weight matter too</h3><p>Heavy drinking and excess body fat can both scar the liver over time, even without a virus.</p></li>
+      <li><h3>See a doctor if you notice these</h3><p>Yellow eyes or skin, dark urine, a swollen belly, or lasting tiredness and loss of appetite.</p></li>
+    </ul>
+    <p class="note">This page gives general health information. It does not replace advice from a doctor who knows your history.</p>
+  </div>
+</section>
+
+<section class="band" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <h2 class="small-head">Our vision</h2>
+        <p class="vision">A Nigeria where liver disease is history</p>
+      </div>
+      <div class="stack">
+        <div>
+          <h3>Who we are</h3>
+          <p>The Nigerian Liver Foundation is a nonprofit with passionate staff dedicated to addressing the indiscriminate burden of liver diseases in Nigeria. We constantly welcome individuals who are passionate about liver health and who share in our vision to <a href="#contact">join our growing team</a>.</p>
+        </div>
+        <div>
+          <h3>Our mission</h3>
+          <p>To eliminate the burden of liver diseases in Nigeria and Sub-Saharan Africa through education, advocacy, research, and improved access to healthcare, while promoting a healthier future for all.</p>
+        </div>
+      </div>
+    </div>
+    <ul class="values" aria-label="Core values">
+      <li><h3>Compassion</h3><p>We care deeply about the well-being of individuals and communities affected by liver diseases.</p></li>
+      <li><h3>Integrity</h3><p>We operate with transparency, honesty, and accountability in all our endeavors.</p></li>
+      <li><h3>Collaboration</h3><p>We believe in the power of partnerships and collaboration to achieve our mission.</p></li>
+      <li><h3>Innovation</h3><p>We embrace new ideas and approaches to address the challenges of liver diseases.</p></li>
+      <li><h3>Equity</h3><p>We strive to ensure that everyone has access to the care and support they need, regardless of their background or circumstances.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="band tint" id="work">
+  <div class="wrap">
+    <div class="stack">
+      <h2>Our work</h2>
+      <p class="lede">We pursue our mission in four ways: education, advocacy, research and better access to healthcare.</p>
+    </div>
+    <div class="rows">
+      <div class="row"><h3>Education</h3><p class="ph">We take plain-language liver health education to communities, schools, workplaces and places of worship.</p></div>
+      <div class="row"><h3>Advocacy</h3><p class="ph">We work with health authorities and partners to make testing and treatment easier to reach and to afford.</p></div>
+      <div class="row"><h3>Research</h3><p class="ph">We support studies that show how liver disease affects Nigerians and what works against it.</p></div>
+      <div class="row"><h3>Access to healthcare</h3><p class="ph">We organise screening and vaccination outreaches and guide people toward specialist care.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="updates">
+  <div class="wrap split">
+    <div>
+      <h2>Updates</h2>
+      <ul class="item-list" id="update-list"></ul>
+    </div>
+    <div>
+      <h2>Resources</h2>
+      <ul class="item-list files" id="resource-list"></ul>
+    </div>
+  </div>
+</section>
+
+<section class="band give" id="give">
+  <div class="wrap">
+    <div class="stack">
+      <h2>Help more Nigerians find out in time</h2>
+      <p>Every outreach depends on test kits, vaccines, health workers and volunteers. There are three ways to take part.</p>
+    </div>
+    <div class="give-grid">
+      <div><h3>Donate</h3><p class="ph">Your gift pays for test kits and vaccine doses at community outreaches.</p></div>
+      <div><h3>Volunteer</h3><p class="ph">Health workers, students and organisers are welcome at our events.</p></div>
+      <div><h3>Partner with us</h3><p class="ph">Hospitals, companies and faith groups can host a screening day.</p></div>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#contact">Ask how to donate</a>
+      <a class="btn btn-line" href="#contact">Volunteer or partner</a>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <dl>
+      <dt>Email</dt><dd class="ph">your-email@example.org</dd>
+      <dt>Phone</dt><dd class="ph">Your phone or WhatsApp number</dd>
+      <dt>Address</dt><dd class="ph">Your office address, city and state</dd>
+      <dt>Social</dt><dd class="ph">Your Facebook, Instagram or X pages</dd>
+    </dl>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© <span id="year">2026</span> The Nigerian Liver Foundation. <span class="ph">Registration details go here.</span></p>
+    <p>Draft note: text with a dashed underline is sample wording waiting for your real details.</p>
+  </div>
+</footer>
+
+<script>
+/* Content your team will edit. In the live site this moves into simple
+   files they can change from an editor screen, with no code. */
+var CONTENT = {
+  updates: [
+    { date: "2026-11-14", title: "Sample update: community screening day", text: "A short summary of the event, who it reached and what happens next. Your team replaces this.", sample: true },
+    { date: "2026-10-30", title: "Sample update: volunteers wanted", text: "A short call for volunteers with the date, place and how to sign up.", sample: true },
+    { date: "2026-10-12", title: "Sample update: new partnership", text: "One or two sentences announcing a partner hospital, sponsor or programme.", sample: true }
+  ],
+  resources: [
+    { type: "PDF", title: "Sample: hepatitis B fact sheet", note: "Uploaded leaflets appear here for download.", sample: true },
+    { type: "PDF", title: "Sample: annual report", note: "Reports and newsletters.", sample: true },
+    { type: "JPG", title: "Sample: outreach poster", note: "Posters and photos.", sample: true }
+  ]
+};
+
+var ANSWERS = {
+  no: "A simple blood test will tell you. Ask any hospital or laboratory for a hepatitis B test (HBsAg). Results are often ready the same day.",
+  neg: "Good. If you have not been vaccinated, ask a health facility about the hepatitis B vaccine. It is given as a short series of injections.",
+  pos: "Many people with hepatitis B live long, healthy lives. See a doctor for regular check-ups, and encourage your family and partner to get tested."
+};
+
+function el(tag, cls, text) {
+  var n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text) n.textContent = text;
+  return n;
+}
+function niceDate(iso) {
+  var p = iso.split("-");
+  var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  return Number(p[2]) + " " + months[Number(p[1]) - 1] + " " + p[0];
+}
+
+var ul = document.getElementById("update-list");
+CONTENT.updates.forEach(function (u) {
+  var li = el("li");
+  var t = el("time", "", niceDate(u.date)); t.setAttribute("datetime", u.date);
+  li.appendChild(t);
+  li.appendChild(el("h3", u.sample ? "ph" : "", u.title));
+  li.appendChild(el("p", "", u.text));
+  ul.appendChild(li);
+});
+
+var rl = document.getElementById("resource-list");
+CONTENT.resources.forEach(function (r) {
+  var li = el("li");
+  li.appendChild(el("span", "ext", r.type));
+  var d = el("div");
+  d.appendChild(el("h3", r.sample ? "ph" : "", r.title));
+  d.appendChild(el("p", "", r.note));
+  li.appendChild(d);
+  rl.appendChild(li);
+});
+
+var buttons = document.querySelectorAll(".check button");
+buttons.forEach(function (b) {
+  b.addEventListener("click", function () {
+    buttons.forEach(function (x) { x.setAttribute("aria-pressed", "false"); });
+    b.setAttribute("aria-pressed", "true");
+    document.getElementById("check-answer").textContent = ANSWERS[b.getAttribute("data-a")];
+  });
+});
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
