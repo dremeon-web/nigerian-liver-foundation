@@ -212,3 +212,9 @@ footer .foot-base { border-top: 1px solid var(--line); padding-top: 18px; }
 .more { display: flex; flex-wrap: wrap; gap: 12px; }
 @media (max-width: 820px) { .cond dl { grid-template-columns: minmax(0, 1fr); } .cond dt { padding-bottom: 0; } .cond dd { border-top: 0; padding-top: 4px; } }
 .foot-brand .logo { height: 64px; width: auto; align-self: flex-start; }
+
+/* social links in the footer */
+.foot-social { display: flex; flex-wrap: wrap; gap: 8px; }
+.foot-brand .foot-social { font-family: var(--body); font-weight: 700; max-width: none; }
+.foot-social a { border: 1.5px solid var(--green); border-radius: 999px; padding: 5px 14px; text-decoration: none; font-size: 0.95rem; color: var(--green); }
+.foot-social a:hover { background: var(--green); color: #fff; }

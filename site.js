@@ -168,6 +168,7 @@ function showSite(s) {
   pairs("programme-list", s.programmes, "div", "row");
   pairs("involved-list", s.involved, "div");
   var c = s.contact || {}, dl = document.getElementById("contact-list");
+  document.querySelectorAll("[data-soc]").forEach(function (a) { var u = c[a.getAttribute("data-soc")]; if (u) { a.href = u; a.hidden = false; } else if (s !== SITE) { a.hidden = true; } });
   if (!dl) return;
   dl.textContent = "";
   function row(label, node) { dl.appendChild(el("dt", "", label)); var dd = el("dd"); dd.appendChild(node); dl.appendChild(dd); return dd; }
